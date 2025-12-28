@@ -14,12 +14,6 @@ namespace FeatureFlags.Lite.Core.Evaluation
 
             if (!flag.Enabled) return false;
 
-            if (flag.AllowedUsers?.Any() == true)
-            {
-                return context.UserId != null &&
-                    flag.AllowedUsers.Contains(context.UserId);
-            }
-
             if (flag.AllowedRoles?.Any() == true)
             {
                 return context.Roles.Intersect(flag.AllowedRoles).Any();

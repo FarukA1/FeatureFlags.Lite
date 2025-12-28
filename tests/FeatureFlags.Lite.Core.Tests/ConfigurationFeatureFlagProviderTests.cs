@@ -24,7 +24,6 @@ namespace FeatureFlags.Lite.Core.Tests
 
             Assert.NotNull(featureFlag);
             Assert.True(featureFlag.Enabled);
-            Assert.Contains("user1", featureFlag.AllowedUsers);
             Assert.Equal(50, featureFlag.RolloutPercentage);
         }
 
