@@ -21,7 +21,7 @@ namespace FeatureFlags.Lite.AspNetDemo.Controllers
 
         [HttpGet("feature-d")]
         [FeatureGate("FeatureD")]
-        public IActionResult FeatureD() => Ok("FeatureD is enabled for allowed users!");
+        public IActionResult FeatureD() => Ok("FeatureD is enabled for allowed roles!");
 
         [HttpGet("feature-e")]
         [FeatureGate("FeatureE")]

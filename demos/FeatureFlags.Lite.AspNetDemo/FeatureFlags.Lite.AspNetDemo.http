@@ -1,6 +1,8 @@
 @FeatureFlags.Lite.AspNetDemo_HostAddress = http://localhost:5164
 
-GET {{FeatureFlags.Lite.AspNetDemo_HostAddress}}/weatherforecast/
+GET {{FeatureFlags.Lite.AspNetDemo_HostAddress}}/Demo/feature-e
+X-User-Id: user-123
+X-Environment: Development
 Accept: application/json
 
 ###
