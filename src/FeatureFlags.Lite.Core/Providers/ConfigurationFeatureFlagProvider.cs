@@ -26,7 +26,6 @@ namespace FeatureFlags.Lite.Core.Abstractions
                 Enabled = flag.Enabled,
                 RolloutPercentage = flag.RolloutPercentage,
                 AllowedRoles = flag.AllowedRoles,
-                AllowedUsers = flag.AllowedUsers,
                 EnvironmentOverrides = flag.EnvironmentOverrides
             };
         }

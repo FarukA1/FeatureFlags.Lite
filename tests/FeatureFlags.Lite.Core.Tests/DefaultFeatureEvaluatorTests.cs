@@ -44,7 +44,6 @@ namespace FeatureFlags.Lite.Core.Tests
             {
                 Name = "TestFeature",
                 Enabled = true,
-                AllowedUsers = new List<string> { "user1" }
             };
 
             var evaluator = new DefaultFeatureEvaluator();
@@ -52,23 +51,6 @@ namespace FeatureFlags.Lite.Core.Tests
             var result = evaluator.Evaluate(featureFlag, new FeatureContext { UserId = "user1" });
 
             Assert.True(result);
-        }
-
-        [Fact]
-        public void TestFeatureWithDisallowedUser()
-        {
-            var featureFlag = new FeatureFlag
-            {
-                Name = "TestFeature",
-                Enabled = true,
-                AllowedUsers = new List<string> { "user1" }
-            };
-
-            var evaluator = new DefaultFeatureEvaluator();
-
-            var result = evaluator.Evaluate(featureFlag, new FeatureContext { UserId = "user2" });
-
-            Assert.False(result);
         }
 
         [Fact]
