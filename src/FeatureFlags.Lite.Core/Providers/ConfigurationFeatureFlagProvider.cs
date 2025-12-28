@@ -17,16 +17,37 @@ namespace FeatureFlags.Lite.Core.Abstractions
             var section = _configuration.GetSection($"FeatureFlags:{featureName}");
             if (!section.Exists()) return null;
 
-            var flag = section.Get<FeatureFlag>();
-            if (flag == null) return null;
+            bool? enabled = null;
+            int? rolloutPercentage = null;
+            List<string>? allowedRoles = null;
+            Dictionary<string, bool>? environmentOverrides = null;
+
+            foreach(var childSection in section.GetChildren())
+            {
+                switch (childSection.Key)
+                {
+                    case nameof(FeatureFlag.Enabled):
+                        enabled = childSection.Get<bool>();
+                        break;
+                    case nameof(FeatureFlag.RolloutPercentage):
+                        rolloutPercentage = childSection.Get<int?>();
+                        break;
+                    case nameof(FeatureFlag.AllowedRoles):
+                        allowedRoles = childSection.Get<List<string>>();
+                        break;
+                    case nameof(FeatureFlag.EnvironmentOverrides):
+                        environmentOverrides = childSection.Get<Dictionary<string, bool>>();
+                        break;
+                }
+            }
 
             return new FeatureFlag
             {
                 Name = featureName,
-                Enabled = flag.Enabled,
-                RolloutPercentage = flag.RolloutPercentage,
-                AllowedRoles = flag.AllowedRoles,
-                EnvironmentOverrides = flag.EnvironmentOverrides
+                Enabled = enabled ?? false,
+                RolloutPercentage = rolloutPercentage,
+                AllowedRoles = allowedRoles,
+                EnvironmentOverrides = environmentOverrides
             };
         }
     }

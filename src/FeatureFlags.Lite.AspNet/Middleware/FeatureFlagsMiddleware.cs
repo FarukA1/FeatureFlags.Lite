@@ -1,5 +1,6 @@
 using FeatureFlags.Lite.AspNet.Attributes;
 using FeatureFlags.Lite.AspNet.Context;
+using FeatureFlags.Lite.Core.Abstractions;
 
 namespace FeatureFlags.Lite.AspNet.Middleware
 {
@@ -28,10 +29,10 @@ namespace FeatureFlags.Lite.AspNet.Middleware
                 return;
             }
 
-            var featureFlags = context.RequestServices.GetService<FeatureFlagService>();
+            var featureFlagService = context.RequestServices.GetService<IFeatureFlagService>();
             var featureContextFactory = context.RequestServices.GetService<IHttpContextFeatureContextFactory>();
 
-            if (featureFlags is null || featureContextFactory is null)
+            if (featureFlagService is null || featureContextFactory is null)
             {
                 await _next(context);
                 return;
@@ -39,7 +40,7 @@ namespace FeatureFlags.Lite.AspNet.Middleware
 
             var featureContext = featureContextFactory.Create(context);
 
-            if (!featureFlags.IsEnabled(featureGate.FeatureName, featureContext))
+            if (!featureFlagService.IsEnabled(featureGate.FeatureName, featureContext))
             {
                 context.Response.StatusCode = StatusCodes.Status404NotFound;
                 return;
