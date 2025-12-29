@@ -1,8 +1,6 @@
 # FeatureFlags.Lite
 
 [![License](https://img.shields.io/github/license/FarukA1/FeatureFlags.Lite)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/FarukA1/FeatureFlags.Lite)](https://github.com/FarukA1/ResponseFilter/releases)
-[![Issues](https://img.shields.io/github/issues/FarukA1/FeatureFlags.Lite)](https://github.com/FarukA1/ResponseFilter/issues)
 
 ## Overview
 
