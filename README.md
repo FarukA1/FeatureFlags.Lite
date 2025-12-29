@@ -19,7 +19,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/FeatureFlags.Lite.git
+git clone https://github.com/FarukA1/FeatureFlags.Lite.git
 ```
 
 ## Quick Start
