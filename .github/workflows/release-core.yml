@@ -31,5 +31,5 @@ jobs:
       - name: Publish Core
         run: |
           dotnet nuget push ./nupkg/*.nupkg \
-            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --api-key ${{ secrets.NUGET_APIKEY }} \
             --source https://api.nuget.org/v3/index.json
