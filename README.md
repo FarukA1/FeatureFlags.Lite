@@ -10,11 +10,11 @@
 
 ## Key Features
 
-- **oggle features on/off via configuration or in-memory provider.
-- **Rollout support for percentage-based feature flags.
-- **Environment-specific overrides.
-- **Role-based access control via `AllowedRoles`.
-- **ASP.NET Core middleware for `[FeatureGate("FeatureName")]` attributes.
+- Toggle features on/off via configuration or in-memory provider.
+- Rollout support for percentage-based feature flags.
+- Environment-specific overrides.
+- Role-based access control via `AllowedRoles`.
+- ASP.NET Core middleware for `[FeatureGate("FeatureName")]` attributes.
 
 ## Installation
 
