@@ -4,7 +4,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <Author>Faruk Awofeso</Author>
+    <Company>Faruk Awofeso</Company>
+    <Description>A feature flag library.</Description>
+    <PackageProjectUrl>https://github.com/FarukA1/FeatureFlags.Lite</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <PackageTags>feature flags, feature management</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
   </ItemGroup>
