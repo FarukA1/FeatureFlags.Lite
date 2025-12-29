@@ -5,8 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <IsPackable>true</IsPackable>
-
     <Author>Faruk Awofeso</Author>
     <Company>Faruk Awofeso</Company>
     <Description>A feature flag library.</Description>
