@@ -1,0 +1,35 @@
+name: Publish Core to NuGet
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Core package version"
+        required: true
+
+jobs:
+  publish-core:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - run: dotnet restore
+      - run: dotnet build --configuration Release
+      - run: dotnet test --configuration Release
+
+      - name: Pack Core
+        run: |
+          dotnet pack src/FeatureFlags.Lite.Core \
+            -c Release \
+            -p:PackageVersion=${{ github.event.inputs.version }} \
+            -o ./nupkg
+
+      - name: Publish Core
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json

@@ -6,6 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <Author>Faruk Awofeso</Author>
+  <Company>Faruk Awofeso</Company>
+  <Description>A feature flag library.</Description>
+  <PackageProjectUrl>https://github.com/FarukA1/FeatureFlags.Lite</PackageProjectUrl>
+  <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  <PackageReadmeFile>README.md</PackageReadmeFile>
+
+  <PackageTags>feature flags, feature management</PackageTags>
+  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.1" />
