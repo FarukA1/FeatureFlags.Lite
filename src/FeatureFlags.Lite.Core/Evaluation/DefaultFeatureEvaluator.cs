@@ -23,11 +23,26 @@ namespace FeatureFlags.Lite.Core.Evaluation
             {
                 if (context.UserId == null) return false;
 
-                var hash = Math.Abs(context.UserId.GetHashCode()) % 100;
+                var hash = StableHash(context.UserId) % 100;
                 return hash < flag.RolloutPercentage;
             }
 
             return true;
+        }
+
+        private static int StableHash(string value)
+        {
+            unchecked
+            {
+                const uint fnvPrime = 16777619;
+                var hash = 2166136261;
+                foreach (var b in System.Text.Encoding.UTF8.GetBytes(value))
+                {
+                    hash ^= b;
+                    hash *= fnvPrime;
+                }
+                return (int)(hash & 0x7FFFFFFF);
+            }
         }
     }
 }
