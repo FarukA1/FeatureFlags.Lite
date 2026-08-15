@@ -8,15 +8,18 @@
     <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 
-    <Author>Faruk Awofeso</Author>
+    <Authors>Faruk Awofeso</Authors>
     <Company>Faruk Awofeso</Company>
-    <Description>A feature flag library.</Description>
+    <Description>ASP.NET Core middleware and [FeatureGate] attribute for FeatureFlags.Lite.</Description>
     <PackageProjectUrl>https://github.com/FarukA1/FeatureFlags.Lite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FarukA1/FeatureFlags.Lite</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <PackageTags>feature flags, feature management</PackageTags>
+    <PackageTags>feature flags, feature management, feature toggle, aspnetcore</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
 
   </PropertyGroup>
 
@@ -29,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FeatureFlags.Lite.Core" Version="1.0.0" />
+    <ProjectReference Include="..\FeatureFlags.Lite.Core\FeatureFlags.Lite.Core.csproj" />
   </ItemGroup>
 
 </Project>

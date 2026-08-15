@@ -5,15 +5,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <Author>Faruk Awofeso</Author>
+    <Authors>Faruk Awofeso</Authors>
     <Company>Faruk Awofeso</Company>
-    <Description>A feature flag library.</Description>
+    <Description>Lightweight feature flags for .NET — config or in-memory backed, with rollout percentage, role targeting, and environment overrides.</Description>
     <PackageProjectUrl>https://github.com/FarukA1/FeatureFlags.Lite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FarukA1/FeatureFlags.Lite</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <PackageTags>feature flags, feature management</PackageTags>
+    <PackageTags>feature flags, feature management, feature toggle</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
 
   </PropertyGroup>
 

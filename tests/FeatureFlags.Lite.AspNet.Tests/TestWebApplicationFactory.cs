@@ -16,7 +16,9 @@ namespace FeatureFlags.Lite.AspNet.Tests
                 var settings = new Dictionary<string, string>
                 {
                     ["FeatureFlags:FeatureA:Enabled"] = "true",
-                    ["FeatureFlags:FeatureB:Enabled"] = "false"
+                    ["FeatureFlags:FeatureB:Enabled"] = "false",
+                    ["FeatureFlags:FeatureD:Enabled"] = "true",
+                    ["FeatureFlags:FeatureD:AllowedRoles:0"] = "Admin"
                 };
 
                 config.AddInMemoryCollection(settings);
